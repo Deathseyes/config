@@ -13,4 +13,6 @@ patch:
         - { when: has_menu, accept: apostrophe, send: 3}
     punctuator/half_shape:
         '/': '、'
+        '<': '《'
+        '>': '》'
         
