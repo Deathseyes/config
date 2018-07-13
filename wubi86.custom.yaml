@@ -2,11 +2,12 @@
 # encoding: utf-8
 
 patch:
+    "switches/@0/reset": 1
     translator/enable_sentence: false
     translator/enable_user_dict: false
     speller/auto_select: true
     speller/max_code_length: 4
+    style/horizontal: true
     "key_binder/bindings":
-        - { when: composing, accept: Return, send: Escape }
         - { when: has_menu, accept: semicolon, send: 2 }
         - { when: has_menu, accept: apostrophe, send: 3}
