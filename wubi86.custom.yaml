@@ -6,6 +6,7 @@ patch:
     translator/enable_sentence: false
     translator/enable_user_dict: false
     speller/auto_select: true
+    speller/auto_clear: auto
     speller/max_code_length: 4
     style/horizontal: true
     "key_binder/bindings":
