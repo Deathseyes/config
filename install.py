@@ -11,6 +11,8 @@ fileList = [
 ]
 
 targetPath = os.environ['APPDATA'] + os.sep + 'Rime' + os.sep
+print('rime config directory: ' + targetPath)
+
 for fileName in fileList:
     print('install: ' + fileName)
     shutil.copy('./' + fileName, targetPath + fileName)
