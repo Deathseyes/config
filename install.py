@@ -28,4 +28,12 @@ target_path = os.environ['HOMEDRIVE'] + os.environ['HOMEPATH']
 print('git config directory: ' + target_path)
 copy_files(target_path, git_config_files)
 
+# git bash config
+git_bash_config_files = [
+    'aliases.sh',
+]
+target_path = 'D:\\Program Files\\Git\\etc\\profile.d'
+print('git bash config directory: ' + target_path)
+copy_files(target_path, git_bash_config_files)
+
 input('press any key to exit.')
