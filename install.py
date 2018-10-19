@@ -4,18 +4,21 @@
 import os
 import shutil
 
-fileList = [
+def copy_files(target_path, file_lists):
+    for file_name in git_config_files:
+        print('install: ' + file_name)
+        shutil.copy('./' + file_name, target_path + file_name)
+
+
+rime_config_files = [
     'wubi86.dict.yaml',
     'wubi86.custom.yaml',
     'default.custom.yaml',
 ]
 
-targetPath = os.environ['APPDATA'] + os.sep + 'Rime' + os.sep
-print('rime config directory: ' + targetPath)
-
-for fileName in fileList:
-    print('install: ' + fileName)
-    shutil.copy('./' + fileName, targetPath + fileName)
+target_path = os.environ['APPDATA'] + os.sep + 'Rime' + os.sep
+print('rime config directory: ' + target_path)
+copy_files(target_path, rime_config_files)
 
 # install git config
 git_config_files = [
@@ -23,8 +26,6 @@ git_config_files = [
 ]
 target_path = os.environ['HOMEDRIVE'] + os.environ['HOMEPATH']
 print('git config directory: ' + target_path)
-for file_name in git_config_files:
-    print('install: ' + file_name)
-    shutil.copy('./' + file_name, targetPath + file_name)
+copy_files(target_path, git_config_files)
 
 input('press any key to exit.')
