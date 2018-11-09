@@ -5,7 +5,7 @@ import os
 import shutil
 
 def copy_files(target_path, file_lists):
-    for file_name in git_config_files:
+    for file_name in file_lists:
         print('install: ' + file_name)
         shutil.copy('./' + file_name, target_path + file_name)
 
@@ -24,7 +24,7 @@ copy_files(target_path, rime_config_files)
 git_config_files = [
     '.gitconfig',
 ]
-target_path = os.environ['HOMEDRIVE'] + os.environ['HOMEPATH']
+target_path = os.environ['HOMEDRIVE'] + os.environ['HOMEPATH'] + '\\'
 print('git config directory: ' + target_path)
 copy_files(target_path, git_config_files)
 
