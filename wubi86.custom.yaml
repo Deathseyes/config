@@ -23,6 +23,31 @@ patch:
         Shift_L: commit_code
         Shift_R: commit_code
         Caps_Lock: commit_code
-    recognizer:
-        patterns:
-            reverse_lookup: "^z[a-z]*'?$"
+    recognizer/patterns/kaomoji: "^`[a-z']*'?$"
+    schema/dependencies:
+        - pinyin_simp
+        - kaomoji
+    engine/segmentors:
+        - ascii_segmentor
+        - matcher
+        - abc_segmentor
+        - affix_segmentor@kaomoji
+        - punct_segmentor
+        - fallback_segmentor
+    engine/translators:
+        - punct_translator
+        - reverse_lookup_translator
+        - table_translator
+        - script_translator@kaomoji
+    kaomoji:
+        tag: kaomoji
+        dictionary: kaomoji
+        prefix: "`" #須配合recognizer
+        suffix: "'"
+        preedit_format: 
+          - "xform/([nl])v/$1ü/"
+          - "xform/([nl])ue/$1üe/"
+          - "xform/([jqxy])v/$1u/"
+        tips: "【颜文字】"
+
+

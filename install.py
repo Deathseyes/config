@@ -14,6 +14,8 @@ rime_config_files = [
     'wubi86.dict.yaml',
     'wubi86.custom.yaml',
     'default.custom.yaml',
+    'kaomoji.dict.yaml',
+    'kaomoji.schema.yaml',
 ]
 
 target_path = os.environ['APPDATA'] + os.sep + 'Rime' + os.sep
